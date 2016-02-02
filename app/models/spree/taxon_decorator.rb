@@ -1,7 +1,8 @@
 module TaxonDecorator
-  extend ActiveSupport::Concern
-  prepended do
-    after_save :parent_elements_touch
+  def self.prepended(base)
+    base.class_eval do
+      after_save :parent_elements_touch
+    end
   end
 
   def parent_elements_touch
