@@ -1,6 +1,6 @@
 module TaxonDecorator
   extend ActiveSupport::Concern
-  included do
+  prepended do
     after_save :parent_elements_touch
   end
 
