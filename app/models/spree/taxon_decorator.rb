@@ -6,7 +6,7 @@ module TaxonDecorator
   end
 
   def parent_elements_touch
-    taxonomy.elements_touch
+    taxonomy.elements_touch if taxonomy
   end
 end
 
